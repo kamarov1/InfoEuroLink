@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EuroLink (EURL) - A Stablecoin Euro Inovadora na BNB Chain</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        :root {
+            --primary-color: #003399;
+            --secondary-color: #ffcc00;
+            --text-color: #333;
+            --background-color: #f4f4f4;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--secondary-color);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-weight: 500;
+        }
+
+        nav ul li a:hover {
+            color: var(--secondary-color);
+        }
+
+        #hero {
+            background-image: linear-gradient(rgba(0, 51, 153, 0.8), rgba(0, 51, 153, 0.8)), url('https://images.unsplash.com/photo-1620714223084-8fcacc6dfd8d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            text-align: center;
+            padding: 150px 0 100px;
+            margin-top: 60px;
+        }
+
+        #hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        #hero p {
+            font-size: 1.4rem;
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: var(--primary-color);
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            font-size: 1.1rem;
+        }
+
+        .cta-button:hover {
+            background-color: #fff;
+            transform: translateY(-3px);
+            box-shadow: 0 4px 8px rgba(255,204,0,0.3);
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            color: var(--primary-color);
+            font-size: 2.5rem;
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 3px;
+            background-color: var(--secondary-color);
+            margin: 10px auto 0;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .feature {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .feature:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 12px rgba(0,0,0,0.15);
+        }
+
+        .feature h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: var(--secondary-color);
+        }
+
+        #caracteristicas ul {
+            list-style: none;
+            padding-left: 20px;
+        }
+
+        #caracteristicas li {
+            margin-bottom: 15px;
+            position: relative;
+            padding-left: 30px;
+        }
+
+        #caracteristicas li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--secondary-color);
+            font-weight: bold;
+        }
+
+        .contract-address {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            margin-top: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .contract-address code {
+            display: block;
+            padding: 15px;
+            background-color: #f8f8f8;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: 'Courier New', Courier, monospace;
+            margin: 15px 0;
+            word-break: break-all;
+        }
+
+        .copy-button {
+            background-color: var(--primary-color);
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .copy-button:hover {
+            background-color: #002266;
+        }
+
+        .functionality {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .functionality:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 12px rgba(0,0,0,0.15);
+        }
+
+        .functionality h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+
+        .button {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            margin-top: 15px;
+        }
+
+        .button:hover {
+            background-color: #002266;
+        }
+
+        #contact-form {
+            max-width: 500px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        #contact-form input,
+        #contact-form textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        #contact-form button {
+            background-color: var(--primary-color);
+            color: #fff;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-size: 1rem;
+            width: 100%;
+        }
+
+        #contact-form button:hover {
+            background-color: #002266;
+        }
+
+        footer {
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 60px 0 20px;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .footer-section {
+            flex: 1;
+            margin-bottom: 20px;
+            min-width: 200px;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 20px;
+            color: var(--secondary-color);
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-section ul li a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section ul li a:hover {
+            color: var(--secondary-color);
+        }
+
+        .social-links li {
+            display: inline-block;
+            margin-right: 15px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+            }
+
+            nav ul {
+                margin-top: 20px;
+            }
+
+            nav ul li {
+                margin: 0 10px;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                flex-direction: column;
+            }
+
+            #hero h1 {
+                font-size: 2.5rem;
+            }
+
+            #hero p {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">EuroLink</div>
+            <ul>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#por-que">Por que EuroLink</a></li>
+                <li><a href="#caracteristicas">Características</a></li>
+                <li><a href="#como-comprar">Como Comprar</a></li>
+                <li><a href="#funcionalidades">Funcionalidades</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero">
+            <div class="container">
+                <h1>EuroLink (EURL)</h1>
+                <p>A Stablecoin Euro Inovadora na BNB Chain</p>
+                <a href="#como-comprar" class="cta-button">Compre Agora</a>
+            </div>
+        </section>
+
+        <section id="sobre">
+            <div class="container">
+                <h2>O que é EuroLink?</h2>
+                <p>EuroLink (EURL) é uma stablecoin inovadora atrelada ao euro, construída na BNB Chain. Projetada para oferecer estabilidade, segurança e recursos avançados para usuários individuais e investidores institucionais.</p>
+                <div class="chart-container">
+                    <canvas id="priceChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <section id="por-que">
+            <div class="container">
+                <h2>Por que escolher EuroLink?</h2>
+                <div class="features-grid">
+                    <div class="feature">
+                        <div class="feature-icon">💶</div>
+                        <h3>Estabilidade</h3>
+                        <p>Atrelada ao euro, oferecendo proteção contra volatilidade.</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">⚡</div>
+                        <h3>Eficiência</h3>
+                        <p>Aproveite as vantagens da BNB Chain - transações rápidas e baratas.</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">📈</div>
+                        <h3>Rendimentos</h3>
+                        <p>Participe do staking e ganhe recompensas atrativas.</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">🗳️</div>
+                        <h3>Governança</h3>
+                        <p>Tenha voz ativa no futuro do projeto através do sistema de votação.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="caracteristicas">
+            <div class="container">
+                <h2>O que diferencia EuroLink das demais stablecoins?</h2>
+                <ul>
+                    <li>Foco no Euro: Exposição à estabilidade da moeda europeia.</li>
+                    <li>Tecnologia Avançada: Algoritmo de estabilização de preço dinâmico.</li>
+                    <li>Governança Inovadora: Sistema de votação quadrática.</li>
+                    <li>Integração DeFi: Projetada para fácil integração em protocolos DeFi na BNB Chain.</li>
+                    <li>Transparência: Atualizações regulares sobre reservas e operações.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="como-comprar">
+            <div class="container">
+                <h2>Como comprar EuroLink (EURL)</h2>
+                <ol>
+                    <li>Configure uma carteira compatível com BNB Chain (ex: MetaMask, Trust Wallet)</li>
+                    <li>Obtenha BNB em uma exchange e transfira para sua carteira</li>
+                    <li>Acesse <a href="https://pancakeswap.finance/swap" target="_blank">Panc
