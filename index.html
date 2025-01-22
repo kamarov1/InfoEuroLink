@@ -3,386 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EuroLink (EURL) - A Stablecoin Euro Inovadora na BNB Chain</title>
+    <title>EuroLink (EURL) - A Stablecoin Euro Revolucionária na BNB Chain</title>
+    <meta name="description" content="EuroLink (EURL) é uma stablecoin inovadora atrelada ao euro na BNB Chain, oferecendo estabilidade, segurança e recursos avançados para usuários e investidores.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <style>
-        :root {
-            --primary-color: #003399;
-            --secondary-color: #ffcc00;
-            --text-color: #333;
-            --background-color: #f4f4f4;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: var(--text-color);
-            background-color: var(--background-color);
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        header {
-            background-color: var(--primary-color);
-            color: #fff;
-            padding: 1rem 0;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 20px;
-        }
-
-        .logo {
-            font-size: 1.8rem;
-            font-weight: bold;
-            color: var(--secondary-color);
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-        }
-
-        nav ul li {
-            margin-left: 20px;
-        }
-
-        nav ul li a {
-            color: #fff;
-            text-decoration: none;
-            transition: color 0.3s ease;
-            font-weight: 500;
-        }
-
-        nav ul li a:hover {
-            color: var(--secondary-color);
-        }
-
-        #hero {
-            background-image: linear-gradient(rgba(0, 51, 153, 0.8), rgba(0, 51, 153, 0.8)), url('https://images.unsplash.com/photo-1620714223084-8fcacc6dfd8d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
-            background-size: cover;
-            background-position: center;
-            color: #fff;
-            text-align: center;
-            padding: 150px 0 100px;
-            margin-top: 60px;
-        }
-
-        #hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-        }
-
-        #hero p {
-            font-size: 1.4rem;
-            margin-bottom: 30px;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .cta-button {
-            display: inline-block;
-            background-color: var(--secondary-color);
-            color: var(--primary-color);
-            padding: 12px 30px;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: bold;
-            transition: all 0.3s ease;
-            font-size: 1.1rem;
-        }
-
-        .cta-button:hover {
-            background-color: #fff;
-            transform: translateY(-3px);
-            box-shadow: 0 4px 8px rgba(255,204,0,0.3);
-        }
-
-        section {
-            padding: 80px 0;
-        }
-
-        h2 {
-            text-align: center;
-            margin-bottom: 40px;
-            color: var(--primary-color);
-            font-size: 2.5rem;
-            position: relative;
-        }
-
-        h2::after {
-            content: '';
-            display: block;
-            width: 100px;
-            height: 3px;
-            background-color: var(--secondary-color);
-            margin: 10px auto 0;
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-        }
-
-        .feature {
-            background-color: #fff;
-            padding: 30px;
-            border-radius: 10px;
-            text-align: center;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-
-        .feature:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 8px 12px rgba(0,0,0,0.15);
-        }
-
-        .feature h3 {
-            color: var(--primary-color);
-            margin-bottom: 15px;
-            font-size: 1.4rem;
-        }
-
-        .feature-icon {
-            font-size: 3rem;
-            margin-bottom: 20px;
-            color: var(--secondary-color);
-        }
-
-        #caracteristicas ul {
-            list-style: none;
-            padding-left: 20px;
-        }
-
-        #caracteristicas li {
-            margin-bottom: 15px;
-            position: relative;
-            padding-left: 30px;
-        }
-
-        #caracteristicas li::before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            color: var(--secondary-color);
-            font-weight: bold;
-        }
-
-        .contract-address {
-            background-color: #fff;
-            padding: 30px;
-            border-radius: 10px;
-            margin-top: 30px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-
-        .contract-address code {
-            display: block;
-            padding: 15px;
-            background-color: #f8f8f8;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-family: 'Courier New', Courier, monospace;
-            margin: 15px 0;
-            word-break: break-all;
-        }
-
-        .copy-button {
-            background-color: var(--primary-color);
-            color: #fff;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        .copy-button:hover {
-            background-color: #002266;
-        }
-
-        .functionality {
-            background-color: #fff;
-            padding: 30px;
-            border-radius: 10px;
-            margin-bottom: 30px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
-        }
-
-        .functionality:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 12px rgba(0,0,0,0.15);
-        }
-
-        .functionality h3 {
-            color: var(--primary-color);
-            margin-bottom: 15px;
-            font-size: 1.4rem;
-        }
-
-        .button {
-            display: inline-block;
-            background-color: var(--primary-color);
-            color: #fff;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-            margin-top: 15px;
-        }
-
-        .button:hover {
-            background-color: #002266;
-        }
-
-        #contact-form {
-            max-width: 500px;
-            margin: 0 auto;
-            background-color: #fff;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-
-        #contact-form input,
-        #contact-form textarea {
-            width: 100%;
-            padding: 12px;
-            margin-bottom: 20px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-size: 1rem;
-        }
-
-        #contact-form button {
-            background-color: var(--primary-color);
-            color: #fff;
-            border: none;
-            padding: 12px 25px;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-            font-size: 1rem;
-            width: 100%;
-        }
-
-        #contact-form button:hover {
-            background-color: #002266;
-        }
-
-        footer {
-            background-color: var(--primary-color);
-            color: #fff;
-            padding: 60px 0 20px;
-        }
-
-        .footer-content {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-        }
-
-        .footer-section {
-            flex: 1;
-            margin-bottom: 20px;
-            min-width: 200px;
-        }
-
-        .footer-section h3 {
-            margin-bottom: 20px;
-            color: var(--secondary-color);
-        }
-
-        .footer-section ul {
-            list-style: none;
-        }
-
-        .footer-section ul li {
-            margin-bottom: 10px;
-        }
-
-        .footer-section ul li a {
-            color: #fff;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .footer-section ul li a:hover {
-            color: var(--secondary-color);
-        }
-
-        .social-links li {
-            display: inline-block;
-            margin-right: 15px;
-        }
-
-        .footer-bottom {
-            text-align: center;
-            margin-top: 40px;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        @media (max-width: 768px) {
-            nav {
-                flex-direction: column;
-            }
-
-            nav ul {
-                margin-top: 20px;
-            }
-
-            nav ul li {
-                margin: 0 10px;
-            }
-
-            .features-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .footer-content {
-                flex-direction: column;
-            }
-
-            #hero h1 {
-                font-size: 2.5rem;
-            }
-
-            #hero p {
-                font-size: 1.2rem;
-            }
-        }
-    </style>
 </head>
 <body>
     <header>
         <nav>
-            <div class="logo">EuroLink</div>
+            <a href="#" class="logo">EuroLink</a>
             <ul>
                 <li><a href="#sobre">Sobre</a></li>
-                <li><a href="#por-que">Por que EuroLink</a></li>
+                <li><a href="#por-que">Vantagens</a></li>
                 <li><a href="#caracteristicas">Características</a></li>
                 <li><a href="#como-comprar">Como Comprar</a></li>
                 <li><a href="#funcionalidades">Funcionalidades</a></li>
@@ -395,8 +28,10 @@
         <section id="hero">
             <div class="container">
                 <h1>EuroLink (EURL)</h1>
-                <p>A Stablecoin Euro Inovadora na BNB Chain</p>
+                <p>A Stablecoin Euro Revolucionária na BNB Chain</p>
+                <p>Estabilidade do Euro, Velocidade da BNB Chain, Inovação DeFi</p>
                 <a href="#como-comprar" class="cta-button">Compre Agora</a>
+                <a href="#whitepaper" class="secondary-button">Leia o Whitepaper</a>
             </div>
         </section>
 
@@ -404,7 +39,26 @@
             <div class="container">
                 <h2>O que é EuroLink?</h2>
                 <p>EuroLink (EURL) é uma stablecoin inovadora atrelada ao euro, construída na BNB Chain. Projetada para oferecer estabilidade, segurança e recursos avançados para usuários individuais e investidores institucionais.</p>
+                <p>Nossa missão é criar uma ponte confiável entre o mundo tradicional das finanças e o ecossistema blockchain, fornecendo uma representação digital estável do euro.</p>
+                <div class="key-features">
+                    <div class="feature">
+                        <i class="fas fa-lock"></i>
+                        <h3>Segurança</h3>
+                        <p>Smart contracts auditados e mecanismos de proteção robustos</p>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-balance-scale"></i>
+                        <h3>Estabilidade</h3>
+                        <p>Algoritmo avançado de estabilização de preço</p>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-exchange-alt"></i>
+                        <h3>Liquidez</h3>
+                        <p>Facilmente negociável em DEXs e CEXs</p>
+                    </div>
+                </div>
                 <div class="chart-container">
+                    <h3>Histórico de Preço EURL/EUR</h3>
                     <canvas id="priceChart"></canvas>
                 </div>
             </div>
@@ -415,24 +69,34 @@
                 <h2>Por que escolher EuroLink?</h2>
                 <div class="features-grid">
                     <div class="feature">
-                        <div class="feature-icon">💶</div>
-                        <h3>Estabilidade</h3>
-                        <p>Atrelada ao euro, oferecendo proteção contra volatilidade.</p>
+                        <i class="fas fa-euro-sign feature-icon"></i>
+                        <h3>Estabilidade do Euro</h3>
+                        <p>Atrelada 1:1 ao euro, oferecendo proteção contra volatilidade e exposição à moeda europeia.</p>
                     </div>
                     <div class="feature">
-                        <div class="feature-icon">⚡</div>
-                        <h3>Eficiência</h3>
-                        <p>Aproveite as vantagens da BNB Chain - transações rápidas e baratas.</p>
+                        <i class="fas fa-bolt feature-icon"></i>
+                        <h3>Eficiência da BNB Chain</h3>
+                        <p>Aproveite as vantagens da BNB Chain - transações rápidas e taxas reduzidas.</p>
                     </div>
                     <div class="feature">
-                        <div class="feature-icon">📈</div>
-                        <h3>Rendimentos</h3>
-                        <p>Participe do staking e ganhe recompensas atrativas.</p>
+                        <i class="fas fa-chart-line feature-icon"></i>
+                        <h3>Rendimentos Atrativos</h3>
+                        <p>Participe do staking e pools de liquidez para ganhar recompensas competitivas.</p>
                     </div>
                     <div class="feature">
-                        <div class="feature-icon">🗳️</div>
-                        <h3>Governança</h3>
-                        <p>Tenha voz ativa no futuro do projeto através do sistema de votação.</p>
+                        <i class="fas fa-users feature-icon"></i>
+                        <h3>Governança Descentralizada</h3>
+                        <p>Tenha voz ativa no futuro do projeto através do sistema de votação quadrática.</p>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-shield-alt feature-icon"></i>
+                        <h3>Segurança Reforçada</h3>
+                        <p>Smart contracts auditados por empresas líderes em segurança blockchain.</p>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-project-diagram feature-icon"></i>
+                        <h3>Integração DeFi</h3>
+                        <p>Projetada para fácil integração com protocolos DeFi existentes e futuros na BNB Chain.</p>
                     </div>
                 </div>
             </div>
@@ -441,12 +105,25 @@
         <section id="caracteristicas">
             <div class="container">
                 <h2>O que diferencia EuroLink das demais stablecoins?</h2>
-                <ul>
-                    <li>Foco no Euro: Exposição à estabilidade da moeda europeia.</li>
-                    <li>Tecnologia Avançada: Algoritmo de estabilização de preço dinâmico.</li>
-                    <li>Governança Inovadora: Sistema de votação quadrática.</li>
-                    <li>Integração DeFi: Projetada para fácil integração em protocolos DeFi na BNB Chain.</li>
-                    <li>Transparência: Atualizações regulares sobre reservas e operações.</li>
+                <ul class="feature-list">
+                    <li>
+                        <strong>Foco no Euro:</strong> Exposição direta à estabilidade da moeda europeia, ideal para usuários e empresas que operam em euros.
+                    </li>
+                    <li>
+                        <strong>Tecnologia Avançada:</strong> Algoritmo de estabilização de preço dinâmico que ajusta a oferta de tokens para manter a paridade com o euro.
+                    </li>
+                    <li>
+                        <strong>Governança Inovadora:</strong> Sistema de votação quadrática que dá mais peso a uma distribuição mais ampla de votos, promovendo decisões mais democráticas.
+                    </li>
+                    <li>
+                        <strong>Integração DeFi Nativa:</strong> Projetada desde o início para integração perfeita com protocolos DeFi na BNB Chain, ampliando as possibilidades de uso.
+                    </li>
+                    <li>
+                        <strong>Transparência Aprimorada:</strong> Atualizações regulares e em tempo real sobre reservas e operações, utilizando oráculos on-chain para maior confiabilidade.
+                    </li>
+                    <li>
+                        <strong>Programa de Incentivos:</strong> Recompensas atrativas para early adopters, provedores de liquidez e participantes ativos da governança.
+                    </li>
                 </ul>
             </div>
         </section>
@@ -454,7 +131,119 @@
         <section id="como-comprar">
             <div class="container">
                 <h2>Como comprar EuroLink (EURL)</h2>
-                <ol>
-                    <li>Configure uma carteira compatível com BNB Chain (ex: MetaMask, Trust Wallet)</li>
-                    <li>Obtenha BNB em uma exchange e transfira para sua carteira</li>
-                    <li>Acesse <a href="https://pancakeswap.finance/swap" target="_blank">Panc
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <h3>Configure sua Carteira</h3>
+                        <p>Instale uma carteira compatível com BNB Chain, como MetaMask ou Trust Wallet.</p>
+                        <a href="#wallet-guide" class="learn-more">Guia de Configuração</a>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <h3>Obtenha BNB</h3>
+                        <p>Compre BNB em uma exchange e transfira para sua carteira BNB Chain.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <h3>Acesse PancakeSwap</h3>
+                        <p>Visite <a href="https://pancakeswap.finance/swap" target="_blank">PancakeSwap</a> e conecte sua carteira.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <h3>Troque BNB por EURL</h3>
+                        <p>Use o endereço do contrato EURL para fazer a troca.</p>
+                    </div>
+                </div>
+                <div class="contract-address">
+                    <h3>Endereço do Contrato EuroLink:</h3>
+                    <code id="contract-code">0x2e9dfe324e80bb95825C718A9b06806fdaB2c5B5</code>
+                    <button onclick="copyToClipboard()" class="copy-button">Copiar Endereço</button>
+                </div>
+                <div class="warning">
+                    <p><strong>Atenção:</strong> Sempre verifique o endereço do contrato antes de fazer qualquer transação. Cuidado com imitações!</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="funcionalidades">
+            <div class="container">
+                <h2>Funcionalidades do EuroLink</h2>
+                <div class="functionality">
+                    <h3>Staking</h3>
+                    <p>Faça stake de seus tokens EURL e ganhe recompensas anuais de até 5%. O staking ajuda a manter a estabilidade do token e recompensa os detentores de longo prazo.</p>
+                    <ul>
+                        <li>Período mínimo de staking: 30 dias</li>
+                        <li>Recompensas distribuídas diariamente</li>
+                        <li>Possibilidade de compound automático</li>
+                    </ul>
+                    <a href="#" class="button">Fazer Stake</a>
+                </div>
+                <div class="functionality">
+                    <h3>Pool de Liquidez</h3>
+                    <p>Forneça liquidez na PancakeSwap e ganhe taxas de negociação. Ao fornecer liquidez, você ajuda a manter a eficiência do mercado e ganha recompensas adicionais.</p>
+                    <ul>
+                        <li>Par de liquidez principal: EURL/BUSD</li>
+                        <li>Recompensas em tokens CAKE</li>
+                        <li>APR variável baseado no volume de negociação</li>
+                    </ul>
+                    <a href="#" class="button">Adicionar Liquidez</a>
+                </div>
+                <div class="functionality">
+                    <h3>Governança</h3>
+                    <p>Participe das decisões do projeto através do sistema de votação quadrática. Seu poder de voto é calculado com base na raiz quadrada da quantidade de tokens que você possui.</p>
+                    <ul>
+                        <li>Propostas de melhoria do protocolo</li>
+                        <li>Decisões sobre alocação de fundos do tesouro</li>
+                        <li>Ajustes nos parâmetros do sistema</li>
+                    </ul>
+                    <a href="#" class="button">Votar em Propostas</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="contato">
+            <div class="container">
+                <h2>Entre em Contato</h2>
+                <form id="contact-form">
+                    <input type="text" placeholder="Nome" required>
+                    <input type="email" placeholder="E-mail" required>
+                    <textarea placeholder="Mensagem" required></textarea>
+                    <button type="submit">Enviar Mensagem</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>EuroLink</h3>
+                    <p>A stablecoin euro inovadora na BNB Chain.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Links Rápidos</h3>
+                    <ul>
+                        <li><a href="#sobre">Sobre</a></li>
+                        <li><a href="#como-comprar">Como Comprar</a></li>
+                        <li><a href="#funcionalidades">Funcionalidades</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Redes Sociais</h3>
+                    <ul class="social-links">
+                        <li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="#" target="_blank"><i class="fab fa-telegram"></i></a></li>
+                        <li><a href="#" target="_blank"><i class="fab fa-discord"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 EuroLink. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
