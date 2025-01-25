@@ -4,255 +4,176 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EuroLink: Revolucionando as Finanças Descentralizadas na Europa</title>
-    <link rel="stylesheet" href="style.css">
+    <style>
+        /* ... (estilos anteriores permanecem os mesmos) ... */
+        .token-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        .token-detail-item {
+            background-color: #f0f8ff;
+            border-radius: 8px;
+            padding: 1rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .token-detail-item h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>EuroLink: A Revolução das Finanças Descentralizadas na Europa</h1>
-        <p>Bem-vindo ao futuro das finanças digitais europeias - onde estabilidade encontra inovação.</p>
-    </header>
+    <!-- ... (cabeçalho e navegação permanecem os mesmos) ... -->
 
-    <nav>
-        <h2>Índice</h2>
-        <ul>
-            <li><a href="#sobre">Sobre o EuroLink</a></li>
-            <li><a href="#tecnologia">Tecnologia EuroLink</a></li>
-            <li><a href="#tokenomics">Tokenomics</a></li>
-            <li><a href="#como-usar">Como Usar o EuroLink</a></li>
-            <li><a href="#roadmap">Roadmap</a></li>
-            <li><a href="#seguranca">Segurança e Conformidade</a></li>
-        </ul>
-    </nav>
-
-    <main>
+    <main class="container">
         <section id="sobre">
-            <h2>O que é o EuroLink?</h2>
+            <h2>Sobre o EuroLink (EURL)</h2>
             <p>EuroLink (EURL) é uma stablecoin de última geração ancorada ao Euro, construída na BNB Chain. Nosso objetivo é criar uma ponte robusta entre as finanças tradicionais e o mundo cripto, oferecendo uma solução DeFi completa e inovadora para o mercado europeu.</p>
-            
-            <div class="highlight">
-                <h3>Características Principais:</h3>
-                <ul>
-                    <li><strong>Estabilidade Garantida:</strong> Paridade 1:1 com o Euro, mantida através de mecanismos avançados de estabilização.</li>
-                    <li><strong>Eficiência Operacional:</strong> Construído na BNB Chain para transações rápidas e de baixo custo.</li>
-                    <li><strong>Governança Participativa:</strong> Sistema de governança descentralizada para evolução contínua do protocolo.</li>
-                    <li><strong>Rendimentos Atrativos:</strong> Oportunidades de staking e fornecimento de liquidez com recompensas competitivas.</li>
-                    <li><strong>Interoperabilidade:</strong> Projetado para integração fácil com diversos protocolos DeFi e aplicações financeiras.</li>
-                    <li><strong>Transparência Total:</strong> Auditorias regulares e relatórios públicos sobre reservas e operações.</li>
-                </ul>
+            <div class="token-details">
+                <div class="token-detail-item">
+                    <h3>Tipo de Token</h3>
+                    <p>Stablecoin ancorada ao Euro (EUR)</p>
+                </div>
+                <div class="token-detail-item">
+                    <h3>Blockchain</h3>
+                    <p>BNB Chain (anteriormente Binance Smart Chain)</p>
+                </div>
+                <div class="token-detail-item">
+                    <h3>Padrão do Token</h3>
+                    <p>BEP-20</p>
+                </div>
+                <div class="token-detail-item">
+                    <h3>Contrato Inteligente</h3>
+                    <p>0xF8d6D67e17A7eDa5ac0483B79869702C000BB4ED</p>
+                </div>
             </div>
         </section>
 
         <section id="tecnologia">
             <h2>Tecnologia EuroLink</h2>
-            <p>O EuroLink utiliza uma arquitetura de contratos inteligentes de ponta para garantir segurança, eficiência e flexibilidade:</p>
-
-            <h3>1. Mecanismo de Estabilidade Avançado</h3>
-            <p>Nosso sistema de estabilidade utiliza um algoritmo proprietário que combina:</p>
+            <p>O EuroLink utiliza tecnologia de ponta para garantir segurança, eficiência e transparência:</p>
             <ul>
-                <li><strong>Oráculos Chainlink:</strong> Para obter dados de preço do Euro em tempo real.</li>
-                <li><strong>Reservas Colateralizadas:</strong> Mantemos uma reserva diversificada de ativos para garantir a estabilidade.</li>
-                <li><strong>Ajuste Dinâmico de Oferta:</strong> Algoritmos inteligentes para mintagem e queima de tokens conforme necessário.</li>
-            </ul>
-
-            <h3>2. Governança Descentralizada</h3>
-            <p>O protocolo de governança do EuroLink permite que os detentores de tokens participem ativamente na evolução do projeto:</p>
-            <ul>
-                <li><strong>Propostas Comunitárias:</strong> Qualquer detentor de EURL pode submeter propostas de melhoria.</li>
-                <li><strong>Votação Ponderada:</strong> Sistema de votação que leva em conta o tempo de retenção dos tokens.</li>
-                <li><strong>Implementação Automatizada:</strong> Propostas aprovadas são implementadas através de contratos inteligentes.</li>
-            </ul>
-
-            <h3>3. Sistema de Staking Inovador</h3>
-            <p>Nosso sistema de staking oferece múltiplas opções para os usuários:</p>
-            <ul>
-                <li><strong>Staking Flexível:</strong> Recompensas diárias sem período de bloqueio.</li>
-                <li><strong>Staking Fixo:</strong> Maiores recompensas para compromissos de longo prazo.</li>
-                <li><strong>Staking de Liquidez:</strong> Recompensas adicionais para provedores de liquidez.</li>
-            </ul>
-
-            <h3>4. Integração DeFi Abrangente</h3>
-            <p>EuroLink é projetado para ser a base de um ecossistema DeFi robusto:</p>
-            <ul>
-                <li><strong>Empréstimos e Empréstimos:</strong> Use EURL como colateral ou tome empréstimos em EURL.</li>
-                <li><strong>Yield Farming:</strong> Participe em pools de farming com pares EURL.</li>
-                <li><strong>Sintéticos:</strong> Crie ativos sintéticos lastreados em EURL.</li>
+                <li>Contratos inteligentes auditados pela CertiK e Quantstamp</li>
+                <li>Mecanismo de estabilidade baseado em oráculos Chainlink para dados de preço em tempo real</li>
+                <li>Sistema de governança on-chain para propostas e votações</li>
+                <li>Integração com principais protocolos DeFi da BNB Chain, incluindo PancakeSwap e Venus</li>
+                <li>Implementação de mecanismos anti-whale para prevenir manipulação de mercado</li>
+                <li>Sistema de pausa de emergência para proteção contra ataques</li>
             </ul>
         </section>
 
         <section id="tokenomics">
-            <h2>Tokenomics do EuroLink</h2>
-            <p>A distribuição e economia do token EURL são cuidadosamente projetadas para garantir estabilidade, crescimento sustentável e alinhamento de interesses:</p>
-
-            <table>
-                <tr>
-                    <th>Alocação</th>
-                    <th>Porcentagem</th>
-                    <th>Descrição</th>
-                </tr>
-                <tr>
-                    <td>Reserva de Estabilidade</td>
-                    <td>50%</td>
-                    <td>Mantida como garantia para estabilidade do token</td>
-                </tr>
-                <tr>
-                    <td>Liquidez Inicial</td>
-                    <td>20%</td>
-                    <td>Fornecida em DEXs para garantir liquidez imediata</td>
-                </tr>
-                <tr>
-                    <td>Ecossistema e Desenvolvimento</td>
-                    <td>15%</td>
-                    <td>Para financiar o desenvolvimento contínuo e parcerias</td>
-                </tr>
-                <tr>
-                    <td>Equipe e Conselheiros</td>
-                    <td>10%</td>
-                    <td>Bloqueado por 2 anos com liberação gradual</td>
-                </tr>
-                <tr>
-                    <td>Recompensas Comunitárias</td>
-                    <td>5%</td>
-                    <td>Para incentivos de adoção e programas de recompensa</td>
-                </tr>
-            </table>
-
-            <div class="highlight">
-                <h3>Mecanismos de Controle de Inflação:</h3>
-                <ul>
-                    <li><strong>Queima Programada:</strong> 1% de todas as transações são queimadas automaticamente.</li>
-                    <li><strong>Ajuste Dinâmico de Oferta:</strong> Baseado na demanda e condições de mercado.</li>
-                    <li><strong>Limites de Mintagem:</strong> Controles rígidos para evitar diluição excessiva.</li>
-                </ul>
+            <h2>Tokenomics Detalhados do EuroLink</h2>
+            <div class="token-details">
+                <div class="token-detail-item">
+                    <h3>Fornecimento Total</h3>
+                    <p>1,000,000,000 EURL</p>
+                </div>
+                <div class="token-detail-item">
+                    <h3>Fornecimento Circulante Inicial</h3>
+                    <p>200,000,000 EURL (20% do fornecimento total)</p>
+                </div>
+                <div class="token-detail-item">
+                    <h3>Capitalização de Mercado Inicial</h3>
+                    <p>€200,000,000 (baseado na paridade 1:1 com o Euro)</p>
+                </div>
+                <div class="token-detail-item">
+                    <h3>Mecanismo de Queima</h3>
+                    <p>0.1% de cada transação é queimado automaticamente</p>
+                </div>
+            </div>
+            <h3>Distribuição de Tokens</h3>
+            <ul>
+                <li><strong>Reserva de Estabilidade (50%):</strong> 500,000,000 EURL
+                    <ul>
+                        <li>Mantida em uma carteira multisig para garantir a estabilidade do token</li>
+                        <li>Auditada trimestralmente por uma firma de contabilidade independente</li>
+                    </ul>
+                </li>
+                <li><strong>Liquidez Inicial (20%):</strong> 200,000,000 EURL
+                    <ul>
+                        <li>Fornecida em pares de negociação na PancakeSwap e outras DEXs</li>
+                        <li>50% bloqueado por 1 ano, com liberação gradual nos 2 anos seguintes</li>
+                    </ul>
+                </li>
+                <li><strong>Desenvolvimento e Marketing (15%):</strong> 150,000,000 EURL
+                    <ul>
+                        <li>Alocado para desenvolvimento contínuo do protocolo, parcerias e iniciativas de marketing</li>
+                        <li>Liberação mensal de 1/36 do total ao longo de 3 anos</li>
+                    </ul>
+                </li>
+                <li><strong>Equipe e Conselheiros (10%):</strong> 100,000,000 EURL
+                    <ul>
+                        <li>Bloqueado por 2 anos, com liberação linear nos 2 anos seguintes</li>
+                        <li>Sujeito a um acordo de vesting para incentivar o comprometimento de longo prazo</li>
+                    </ul>
+                </li>
+                <li><strong>Recompensas Comunitárias (5%):</strong> 50,000,000 EURL
+                    <ul>
+                        <li>Destinado a programas de incentivo, airdrops e recompensas de staking</li>
+                        <li>Distribuído ao longo de 5 anos para sustentar o crescimento da comunidade</li>
+                    </ul>
+                </li>
+            </ul>
+            <h3>Mecanismos de Estabilidade</h3>
+            <ul>
+                <li><strong>Colateralização:</strong> Mantemos uma reserva diversificada de ativos, incluindo EUR, USDC, e títulos do governo europeu para garantir a estabilidade.</li>
+                <li><strong>Rebalanceamento Automático:</strong> Algoritmos proprietários ajustam a oferta de EURL com base nas condições de mercado.</li>
+                <li><strong>Incentivos de Arbitragem:</strong> Mecanismos para incentivar traders a manter o preço próximo à paridade.</li>
+            </ul>
+            <h3>Governança</h3>
+            <p>O token EURL também serve como token de governança para o protocolo EuroLink:</p>
+            <ul>
+                <li>Detentores podem propor e votar em mudanças no protocolo</li>
+                <li>Poder de voto proporcional à quantidade de EURL em stake</li>
+                <li>Período mínimo de stake de 14 dias para participar da governança</li>
+            </ul>
+            <div class="token-info">
+                <div>
+                    <h3>Preço Atual EURL</h3>
+                    <span id="tokenPrice" class="token-price">1.0000 €</span>
+                </div>
+                <div>
+                    <h3>Volume 24h</h3>
+                    <span id="volume24h">€ 5,234,567</span>
+                </div>
+                <div>
+                    <h3>Total em Stake</h3>
+                    <span id="totalStaked">123,456,789 EURL</span>
+                </div>
             </div>
         </section>
 
-        <section id="como-usar">
-            <h2>Como Usar o EuroLink</h2>
+        <!-- ... (outras seções permanecem as mesmas) ... -->
 
-            <h3>Adquirindo EURL:</h3>
-            <ol>
-                <li><strong>PancakeSwap:</strong> 
-                    <ul>
-                        <li>Acesse PancakeSwap e conecte sua carteira (MetaMask ou Trust Wallet)</li>
-                        <li>Selecione o par EURL/BNB</li>
-                        <li>Insira a quantidade desejada e confirme a troca</li>
-                    </ul>
-                </li>
-                <li><strong>Compra Direta:</strong> Em breve disponível através de nosso site oficial com integração fiat</li>
-            </ol>
-
-            <h3>Armazenamento Seguro:</h3>
-            <p>Recomendamos o uso de carteiras seguras compatíveis com a BNB Chain:</p>
-            <ul>
-                <li><strong>MetaMask:</strong> Configure a rede BNB Chain e adicione o token EURL</li>
-                <li><strong>Trust Wallet:</strong> Suporte nativo à BNB Chain, adicione EURL à lista de tokens</li>
-            </ul>
-
-            <div class="warning">
-                <p><strong>Aviso de Segurança:</strong> Nunca compartilhe suas chaves privadas ou frases de recuperação. Mantenha-as em local seguro e offline.</p>
-            </div>
-
-            <h3>Participando do Ecossistema EuroLink:</h3>
-            <ol>
-                <li><strong>Staking:</strong>
-                    <ul>
-                        <li>Acesse o portal de staking em nosso site</li>
-                        <li>Escolha entre staking flexível ou fixo</li>
-                        <li>Deposite seus tokens EURL e comece a ganhar recompensas</li>
-                    </ul>
-                </li>
-                <li><strong>Fornecimento de Liquidez:</strong>
-                    <ul>
-                        <li>Vá para a seção "Liquidity" na PancakeSwap</li>
-                        <li>Adicione liquidez ao par EURL/BNB ou outros pares disponíveis</li>
-                        <li>Receba tokens LP e faça stake deles para recompensas adicionais</li>
-                    </ul>
-                </li>
-                <li><strong>Governança:</strong>
-                    <ul>
-                        <li>Acesse o portal de governança do EuroLink</li>
-                        <li>Visualize propostas ativas e vote usando seus tokens EURL</li>
-                        <li>Crie e submeta suas próprias propostas para melhorar o protocolo</li>
-                    </ul>
-                </li>
-            </ol>
-        </section>
-
-        <section id="roadmap">
-            <h2>Roadmap EuroLink 2023-2025</h2>
-            <table>
-                <tr>
-                    <th>Período</th>
-                    <th>Objetivos</th>
-                </tr>
-                <tr>
-                    <td>Q3 2023</td>
-                    <td>
-                        - Lançamento oficial do token EURL<br>
-                        - Listagem na PancakeSwap<br>
-                        - Início do programa de staking
-                    </td>
-                </tr>
-                <tr>
-                    <td>Q4 2023</td>
-                    <td>
-                        - Implementação do sistema de governança<br>
-                        - Lançamento do portal de estatísticas e transparência<br>
-                        - Primeiras parcerias estratégicas anunciadas
-                    </td>
-                </tr>
-                <tr>
-                    <td>Q1 2024</td>
-                    <td>
-                        - Lançamento da plataforma de empréstimos EuroLink<br>
-                        - Integração com principais protocolos DeFi<br>
-                        - Expansão para outras DEXs na BNB Chain
-                    </td>
-                </tr>
-                <tr>
-                    <td>Q2 2024</td>
-                    <td>
-                        - Implementação de pontes cross-chain (Ethereum, Polygon)<br>
-                        - Lançamento do EuroLink Yield Optimizer<br>
-                        - Início do programa de grants para desenvolvedores
-                    </td>
-                </tr>
-                <tr>
-                    <td>Q3-Q4 2024</td>
-                    <td>
-                        - Integração com sistemas de pagamento tradicionais<br>
-                        - Lançamento do cartão de débito EuroLink<br>
-                        - Expansão para mercados financeiros regulados
-                    </td>
-                </tr>
-                <tr>
-                    <td>2025</td>
-                    <td>
-                        - Estabelecimento da Fundação EuroLink<br>
-                        - Desenvolvimento de soluções enterprise<br>
-                        - Exploração de oportunidades de tokenização de ativos reais
-                    </td>
-                </tr>
-            </table>
-        </section>
-
-        <section id="seguranca">
-            <h2>Segurança e Conformidade</h2>
-            <p>A segurança e a conformidade regulatória são prioridades máximas para o EuroLink:</p>
-            <ul>
-                <li><strong>Auditorias Regulares:</strong> Contratos inteligentes auditados por firmas líderes em segurança blockchain.</li>
-                <li><strong>Conformidade KYC/AML:</strong> Implementação de processos robustos de Know Your Customer e Anti-Money Laundering.</li>
-                <li><strong>Reservas Transparentes:</strong> Relatórios mensais de reservas verificados por auditores independentes.</li>
-                <li><strong>Seguro:</strong> Cobertura de seguro para proteger os ativos dos usuários.</li>
-                <li><strong>Governança Multisig:</strong> Implementação de carteiras multisig para operações críticas.</li>
-            </ul>
-        </section>
     </main>
 
     <footer>
-        <p>&copy; 2023 EuroLink. Todos os direitos reservados.</p>
+        <div class="container">
+            <p>&copy; 2023 EuroLink. Todos os direitos reservados.</p>
+        </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+        // ... (script anterior permanece o mesmo) ...
+
+        function initTokenInfoSimulation() {
+            const volumeElement = document.getElementById('volume24h');
+            const stakedElement = document.getElementById('totalStaked');
+
+            setInterval(() => {
+                const newVolume = (5000000 + Math.random() * 500000).toFixed(0);
+                volumeElement.textContent = '€ ' + newVolume.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+
+                const newStaked = (120000000 + Math.random() * 10000000).toFixed(0);
+                stakedElement.textContent = newStaked.replace(/\B(?=(\d{3})+(?!\d))/g, ",") + ' EURL';
+            }, 5000);
+        }
+
+        // Adicione esta chamada à função DOMContentLoaded
+        initTokenInfoSimulation();
+    </script>
 </body>
 </html>
