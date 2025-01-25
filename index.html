@@ -3,34 +3,200 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EuroLink: Revolucionando as Finanças Descentralizadas na Europa</title>
+    <title>EuroLink: A Stablecoin Europeia Descentralizada</title>
     <style>
-        /* ... (estilos anteriores permanecem os mesmos) ... */
+        :root {
+            --primary-color: #003366;
+            --secondary-color: #0066cc;
+            --accent-color: #ffcc00;
+            --background-color: #f0f5ff;
+            --text-color: #333333;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: #ffffff;
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        nav {
+            background-color: var(--secondary-color);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style-type: none;
+        }
+
+        nav ul li {
+            margin: 0 1rem;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #ffffff;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: var(--accent-color);
+        }
+
+        section {
+            background-color: #ffffff;
+            border-radius: 8px;
+            margin: 2rem 0;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 0.5rem;
+        }
+
         .token-details {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1rem;
+            gap: 1.5rem;
             margin-top: 2rem;
         }
+
         .token-detail-item {
-            background-color: #f0f8ff;
+            background-color: #f8f9fa;
             border-radius: 8px;
-            padding: 1rem;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: 1.5rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
         }
+
+        .token-detail-item:hover {
+            transform: translateY(-5px);
+        }
+
         .token-detail-item h3 {
-            color: var(--primary-color);
+            color: var(--secondary-color);
             margin-bottom: 0.5rem;
+        }
+
+        .roadmap {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .roadmap-item {
+            background-color: #ffffff;
+            border-left: 4px solid var(--accent-color);
+            padding: 1.5rem;
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+
+        .roadmap-item:hover {
+            transform: translateX(10px);
+        }
+
+        .roadmap-item::before {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: var(--accent-color);
+            border-radius: 50%;
+            left: -12px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .token-info {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background-color: var(--primary-color);
+            color: #ffffff;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-top: 2rem;
+        }
+
+        .token-price {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        footer {
+            background-color: var(--primary-color);
+            color: #ffffff;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .token-details {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- ... (cabeçalho e navegação permanecem os mesmos) ... -->
+    <header>
+        <div class="container">
+            <h1>EuroLink</h1>
+            <p>A Stablecoin Europeia Descentralizada</p>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#tecnologia">Tecnologia</a></li>
+                <li><a href="#tokenomics">Tokenomics</a></li>
+                <li><a href="#roadmap">Roadmap</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </div>
+    </nav>
 
     <main class="container">
         <section id="sobre">
             <h2>Sobre o EuroLink (EURL)</h2>
-            <p>EuroLink (EURL) é uma stablecoin de última geração ancorada ao Euro, construída na BNB Chain. Nosso objetivo é criar uma ponte robusta entre as finanças tradicionais e o mundo cripto, oferecendo uma solução DeFi completa e inovadora para o mercado europeu.</p>
+            <p>EuroLink (EURL) é uma stablecoin descentralizada ancorada ao Euro, construída na BNB Chain. Nosso objetivo é fornecer uma solução estável e eficiente para transações e aplicações DeFi no mercado europeu.</p>
             <div class="token-details">
                 <div class="token-detail-item">
                     <h3>Tipo de Token</h3>
@@ -38,7 +204,7 @@
                 </div>
                 <div class="token-detail-item">
                     <h3>Blockchain</h3>
-                    <p>BNB Chain (anteriormente Binance Smart Chain)</p>
+                    <p>BNB Chain</p>
                 </div>
                 <div class="token-detail-item">
                     <h3>Padrão do Token</h3>
@@ -53,101 +219,93 @@
 
         <section id="tecnologia">
             <h2>Tecnologia EuroLink</h2>
-            <p>O EuroLink utiliza tecnologia de ponta para garantir segurança, eficiência e transparência:</p>
             <ul>
-                <li>Contratos inteligentes auditados pela CertiK e Quantstamp</li>
-                <li>Mecanismo de estabilidade baseado em oráculos Chainlink para dados de preço em tempo real</li>
-                <li>Sistema de governança on-chain para propostas e votações</li>
-                <li>Integração com principais protocolos DeFi da BNB Chain, incluindo PancakeSwap e Venus</li>
-                <li>Implementação de mecanismos anti-whale para prevenir manipulação de mercado</li>
-                <li>Sistema de pausa de emergência para proteção contra ataques</li>
+                <li>Contratos inteligentes auditados pela CertiK</li>
+                <li>Mecanismo de estabilidade baseado em oráculos Chainlink</li>
+                <li>Sistema de governança on-chain</li>
+                <li>Integração com PancakeSwap para liquidez inicial</li>
+                <li>Implementação de mecanismos anti-whale</li>
+                <li>Sistema de pausa de emergência</li>
             </ul>
         </section>
 
         <section id="tokenomics">
-            <h2>Tokenomics Detalhados do EuroLink</h2>
+            <h2>Tokenomics do EuroLink</h2>
             <div class="token-details">
                 <div class="token-detail-item">
                     <h3>Fornecimento Total</h3>
-                    <p>1,000,000,000 EURL</p>
+                    <p>100,000,000 EURL</p>
                 </div>
                 <div class="token-detail-item">
                     <h3>Fornecimento Circulante Inicial</h3>
-                    <p>200,000,000 EURL (20% do fornecimento total)</p>
+                    <p>10,000,000 EURL (10% do fornecimento total)</p>
                 </div>
                 <div class="token-detail-item">
                     <h3>Capitalização de Mercado Inicial</h3>
-                    <p>€200,000,000 (baseado na paridade 1:1 com o Euro)</p>
+                    <p>€10,000,000</p>
                 </div>
                 <div class="token-detail-item">
-                    <h3>Mecanismo de Queima</h3>
-                    <p>0.1% de cada transação é queimado automaticamente</p>
+                    <h3>Taxa de Transação</h3>
+                    <p>0.1% (50% para reservas, 50% para desenvolvimento)</p>
                 </div>
             </div>
             <h3>Distribuição de Tokens</h3>
             <ul>
-                <li><strong>Reserva de Estabilidade (50%):</strong> 500,000,000 EURL
-                    <ul>
-                        <li>Mantida em uma carteira multisig para garantir a estabilidade do token</li>
-                        <li>Auditada trimestralmente por uma firma de contabilidade independente</li>
-                    </ul>
-                </li>
-                <li><strong>Liquidez Inicial (20%):</strong> 200,000,000 EURL
-                    <ul>
-                        <li>Fornecida em pares de negociação na PancakeSwap e outras DEXs</li>
-                        <li>50% bloqueado por 1 ano, com liberação gradual nos 2 anos seguintes</li>
-                    </ul>
-                </li>
-                <li><strong>Desenvolvimento e Marketing (15%):</strong> 150,000,000 EURL
-                    <ul>
-                        <li>Alocado para desenvolvimento contínuo do protocolo, parcerias e iniciativas de marketing</li>
-                        <li>Liberação mensal de 1/36 do total ao longo de 3 anos</li>
-                    </ul>
-                </li>
-                <li><strong>Equipe e Conselheiros (10%):</strong> 100,000,000 EURL
-                    <ul>
-                        <li>Bloqueado por 2 anos, com liberação linear nos 2 anos seguintes</li>
-                        <li>Sujeito a um acordo de vesting para incentivar o comprometimento de longo prazo</li>
-                    </ul>
-                </li>
-                <li><strong>Recompensas Comunitárias (5%):</strong> 50,000,000 EURL
-                    <ul>
-                        <li>Destinado a programas de incentivo, airdrops e recompensas de staking</li>
-                        <li>Distribuído ao longo de 5 anos para sustentar o crescimento da comunidade</li>
-                    </ul>
-                </li>
+                <li><strong>Reserva de Estabilidade (70%):</strong> 70,000,000 EURL</li>
+                <li><strong>Liquidez Inicial (10%):</strong> 10,000,000 EURL</li>
+                <li><strong>Desenvolvimento e Marketing (10%):</strong> 10,000,000 EURL</li>
+                <li><strong>Equipe e Conselheiros (5%):</strong> 5,000,000 EURL (bloqueado por 2 anos)</li>
+                <li><strong>Recompensas Comunitárias (5%):</strong> 5,000,000 EURL</li>
             </ul>
-            <h3>Mecanismos de Estabilidade</h3>
-            <ul>
-                <li><strong>Colateralização:</strong> Mantemos uma reserva diversificada de ativos, incluindo EUR, USDC, e títulos do governo europeu para garantir a estabilidade.</li>
-                <li><strong>Rebalanceamento Automático:</strong> Algoritmos proprietários ajustam a oferta de EURL com base nas condições de mercado.</li>
-                <li><strong>Incentivos de Arbitragem:</strong> Mecanismos para incentivar traders a manter o preço próximo à paridade.</li>
-            </ul>
-            <h3>Governança</h3>
-            <p>O token EURL também serve como token de governança para o protocolo EuroLink:</p>
-            <ul>
-                <li>Detentores podem propor e votar em mudanças no protocolo</li>
-                <li>Poder de voto proporcional à quantidade de EURL em stake</li>
-                <li>Período mínimo de stake de 14 dias para participar da governança</li>
-            </ul>
-            <div class="token-info">
-                <div>
-                    <h3>Preço Atual EURL</h3>
-                    <span id="tokenPrice" class="token-price">1.0000 €</span>
+        </section>
+
+        <section id="roadmap">
+            <h2>Roadmap EuroLink</h2>
+            <div class="roadmap">
+                <div class="roadmap-item">
+                    <h3>Q4 2023</h3>
+                    <ul>
+                        <li>Lançamento do token EURL na BNB Chain</li>
+                        <li>Listagem na PancakeSwap</li>
+                        <li>Implementação do programa de staking básico</li>
+                    </ul>
                 </div>
-                <div>
-                    <h3>Volume 24h</h3>
-                    <span id="volume24h">€ 5,234,567</span>
+                <div class="roadmap-item">
+                    <h3>Q1 2024</h3>
+                    <ul>
+                        <li>Lançamento da plataforma de governança</li>
+                        <li>Integração com Venus Protocol para empréstimos</li>
+                        <li>Auditoria de segurança pela CertiK</li>
+                    </ul>
                 </div>
-                <div>
-                    <h3>Total em Stake</h3>
-                    <span id="totalStaked">123,456,789 EURL</span>
+                <div class="roadmap-item">
+                    <h3>Q2 2024</h3>
+                    <ul>
+                        <li>Lançamento do EuroLink Yield Aggregator</li>
+                        <li>Parceria com 1-2 projetos DeFi na BNB Chain</li>
+                        <li>Início do programa de embaixadores comunitários</li>
+                    </ul>
+                </div>
+                <div class="roadmap-item">
+                    <h3>Q3-Q4 2024</h3>
+                    <ul>
+                        <li>Implementação de bridge para Ethereum</li>
+                        <li>Expansão para pelo menos uma DEX adicional</li>
+                        <li>Desenvolvimento de soluções para pagamentos B2B</li>
+                    </ul>
                 </div>
             </div>
         </section>
 
-        <!-- ... (outras seções permanecem as mesmas) ... -->
-
+        <section id="contato">
+            <h2>Entre em Contato</h2>
+            <p>Junte-se à nossa comunidade:</p>
+            <ul>
+                <li>Telegram: <a href="#">EuroLink Community</a></li>
+                <li>Twitter: <a href="#">@EuroLinkOfficial</a></li>
+                <li>Email: contact@eurolink.finance</li>
+            </ul>
+        </section>
     </main>
 
     <footer>
@@ -157,23 +315,20 @@
     </footer>
 
     <script>
-        // ... (script anterior permanece o mesmo) ...
+        document.addEventListener('DOMContentLoaded', () => {
+            initSmoothScrolling();
+        });
 
-        function initTokenInfoSimulation() {
-            const volumeElement = document.getElementById('volume24h');
-            const stakedElement = document.getElementById('totalStaked');
-
-            setInterval(() => {
-                const newVolume = (5000000 + Math.random() * 500000).toFixed(0);
-                volumeElement.textContent = '€ ' + newVolume.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-
-                const newStaked = (120000000 + Math.random() * 10000000).toFixed(0);
-                stakedElement.textContent = newStaked.replace(/\B(?=(\d{3})+(?!\d))/g, ",") + ' EURL';
-            }, 5000);
+        function initSmoothScrolling() {
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
         }
-
-        // Adicione esta chamada à função DOMContentLoaded
-        initTokenInfoSimulation();
     </script>
 </body>
 </html>
